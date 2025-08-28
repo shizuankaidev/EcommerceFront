@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalhes do Produto - Meu Site</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root {
+    --cor-fundo: #111827;         /* fundo principal */
+    --cor-fundo-sec: #1f2937;     /* fundo secundário (cards/menus) */
+    --cor-primaria: #a855f7;      /* roxo principal */
+    --cor-primaria-hover: #9333ea;/* roxo hover */
+    --cor-texto: #f3f4f6;         /* texto claro */
+    --cor-texto-sec: #d1d5db;     /* texto secundário */
+    --cor-destaque: #f59e0b;      /* amarelo (estrelas etc) */
+    --cor-borda: #374151;         /* cor de bordas */
+  }
+
+  /* Utilitárias para usar no HTML */
+  .bg-fundo { background-color: var(--cor-fundo); }
+  .bg-fundo-sec { background-color: var(--cor-fundo-sec); }
+  .bg-primaria { background-color: var(--cor-primaria); }
+  .bg-primaria-hover:hover { background-color: var(--cor-primaria-hover); }
+
+  .text-primaria { color: var(--cor-primaria); }
+  .text-sec { color: var(--cor-texto-sec); }
+  .text-destaque { color: var(--cor-destaque); }
+
+  .border-custom { border-color: var(--cor-borda); }
+</style>
+</head>
+<body class="bg-fundo text-white font-sans">
+
+<!-- Header -->
+<header class="bg-fundo-sec shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <div class="flex items-center space-x-3">
+      <img src="/assets/logo.svg" alt="Logo" class="w-12 h-12 rounded-full object-cover">
+      <span class="text-2xl font-bold text-primaria">MeuSite</span>
+    </div>
+    <nav class="flex items-center space-x-6">
+      <button class="hover:text-primaria transition-colors">Usuário</button>
+      <button class="hover:text-primaria transition-colors">Carrinho</button>
+      <button class="hover:text-primaria transition-colors">Configurações</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Página do Produto -->
+<section class="max-w-7xl mx-auto py-12 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 justify-center items-start">
+
+    <!-- Imagem e Comprar -->
+    <div class="flex flex-col items-center">
+      <img src="https://benchpromos.com.br/_next/image?url=https%3A%2F%2Fdrive.usercontent.google.com%2Fdownload%3Fid%3D1AGCnfUssyxVE6Er96VoMo7Ie1kPCwX5r%26authuser%3D0&w=640&q=75" 
+           alt="Produto" 
+           class="w-full max-w-md h-auto object-contain bg-fundo p-4 rounded-lg shadow-lg mb-6">
+      <button class="bg-primaria text-white px-8 py-3 rounded-lg text-lg bg-primaria-hover transition-colors w-full max-w-md mb-3">Comprar Agora</button>
+      <button class="bg-fundo-sec text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors w-full max-w-md">Votar / Avaliar</button>
+    </div>
+
+    <!-- Informações do Produto -->
+    <div class="flex flex-col space-y-6">
+      <h1 class="text-3xl font-bold text-primaria mb-2 text-center md:text-left">Notebook Gamer Nitro 5</h1>
+      <p class="text-sec text-lg text-center md:text-left">Notebook Gamer potente com Ryzen 7, 16GB RAM, SSD 512GB.</p>
+      
+      <!-- Preços -->
+      <div class="flex justify-center md:justify-start items-center space-x-4 text-lg">
+        <span class="line-through text-gray-500">R$ 5500,00</span>
+        <span class="text-primaria font-bold text-2xl">R$ 4999,99</span>
+      </div>
+
+      <!-- Categoria e Tags -->
+      <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+        <span class="bg-primaria px-3 py-1 rounded-full text-sm">eletrônicos</span>
+        <span class="bg-primaria px-3 py-1 rounded-full text-sm">gamer</span>
+        <span class="bg-primaria px-3 py-1 rounded-full text-sm">notebook</span>
+        <span class="bg-primaria px-3 py-1 rounded-full text-sm">ryzen</span>
+        <span class="bg-primaria px-3 py-1 rounded-full text-sm">ssd</span>
+      </div>
+
+      <!-- Ficha Técnica -->
+      <div>
+        <h2 class="text-primaria text-xl font-bold mb-2 text-center md:text-left">Ficha Técnica</h2>
+        <table class="min-w-full bg-fundo-sec rounded-lg overflow-hidden mx-auto md:mx-0">
+          <tbody>
+            <tr class="border-b border-custom">
+              <td class="px-4 py-2 font-semibold text-sec">Processador</td>
+              <td class="px-4 py-2 text-white">Ryzen 7</td>
+            </tr>
+            <tr class="border-b border-custom">
+              <td class="px-4 py-2 font-semibold text-sec">Memória RAM</td>
+              <td class="px-4 py-2 text-white">16GB</td>
+            </tr>
+            <tr class="border-b border-custom">
+              <td class="px-4 py-2 font-semibold text-sec">Armazenamento</td>
+              <td class="px-4 py-2 text-white">SSD 512GB</td>
+            </tr>
+            <tr class="border-b border-custom">
+              <td class="px-4 py-2 font-semibold text-sec">Categoria</td>
+              <td class="px-4 py-2 text-white">Eletrônicos / Notebook</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 font-semibold text-sec">Validade</td>
+              <td class="px-4 py-2 text-white">Não aplicável</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Avaliações -->
+      <div>
+        <h2 class="text-primaria font-bold text-xl mb-2 text-center md:text-left">Avaliações</h2>
+        <div class="space-y-3">
+          <div class="bg-fundo-sec p-3 rounded-lg">
+            <div class="flex justify-between">
+              <span class="font-semibold">Carlos</span>
+              <span class="text-destaque">★ 5</span>
+            </div>
+            <p class="text-sec">Excelente notebook!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-fundo-sec text-sec py-12 mt-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+    <div>
+      <h3 class="text-primaria text-lg font-bold mb-2">MeuSite</h3>
+      <p>Produtos de qualidade, promoções exclusivas e atendimento premium.</p>
+    </div>
+    <div>
+      <h3 class="text-primaria text-lg font-bold mb-2">Links Úteis</h3>
+      <ul class="space-y-1">
+        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Produtos</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Contato</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Suporte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-primaria text-lg font-bold mb-2">Contato</h3>
+      <p>Email: suporte@meusite.com</p>
+      <p>Telefone: (11) 99999-9999</p>
+      <div class="flex space-x-4 mt-2">
+        <a href="#" class="hover:text-primaria transition-colors">🌐</a>
+        <a href="#" class="hover:text-primaria transition-colors">📘</a>
+        <a href="#" class="hover:text-primaria transition-colors">🐦</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

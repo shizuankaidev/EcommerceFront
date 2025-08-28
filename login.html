@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Moderno</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --cor-fundo: #0f172a;
+      --cor-fundo-sec: rgba(30, 41, 59, 0.6);
+      --cor-primaria: #a855f7;
+      --cor-primaria-hover: #9333ea;
+      --cor-texto: #f3f4f6;
+      --cor-texto-sec: #cbd5e1;
+      --cor-borda: #334155;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #1e1b4b, #0f172a);
+    }
+
+    /* Glassmorphism */
+    .glass {
+      backdrop-filter: blur(20px);
+      background: var(--cor-fundo-sec);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Botão roxo moderno */
+    .btn-purple {
+      background: linear-gradient(90deg, var(--cor-primaria), var(--cor-primaria-hover));
+      transition: all 0.3s ease;
+    }
+    .btn-purple:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 4px 20px var(--cor-primaria-hover);
+    }
+
+    /* Texto com gradiente */
+    .fade-text {
+      background: linear-gradient(90deg, var(--cor-primaria), var(--cor-primaria-hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Input estilizado */
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background-color: rgba(15, 23, 42, 0.8);
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--cor-borda);
+      transition: all 0.3s ease;
+    }
+    .input-wrapper:focus-within {
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    }
+    .input-wrapper input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--cor-texto);
+      flex: 1;
+      padding-left: 0.5rem;
+    }
+
+    /* Transição entre forms */
+    .form-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .form-transition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+    .form-transition.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      position: relative;
+    }
+
+    /* Logo animada */
+    .logo {
+      filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.7));
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.7));
+      }
+      50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 25px rgba(168, 85, 247, 1));
+      }
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen gap-6 px-4">
+
+  <!-- Logo -->
+  <div class="flex justify-center mb-6">
+    <img src="/assets/logo.svg" alt="Logo" class="w-32 h-32 logo">
+  </div>
+
+  <!-- Card -->
+  <div class="glass rounded-3xl shadow-2xl w-full max-w-md p-10">
+    <div class="form-wrapper">
+
+      <!-- Login -->
+      <form id="loginForm" class="form-transition active flex flex-col gap-6">
+        <h2 class="text-3xl font-extrabold text-center fade-text">Bem-vindo!</h2>
+        <p class="text-center text-[var(--cor-texto-sec)] mb-4">Entre na sua conta</p>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-envelope text-gray-400 text-lg"></i>
+          <input type="email" placeholder="Email">
+        </div>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock text-gray-400 text-lg"></i>
+          <input type="password" placeholder="Senha">
+        </div>
+
+        <button type="submit" class="p-4 rounded-xl font-bold text-white btn-purple">Entrar</button>
+
+        <p class="text-center text-[var(--cor-texto-sec)] mt-2">Não tem conta? 
+          <span id="showRegister" class="text-[var(--cor-primaria)] cursor-pointer font-semibold hover:text-[var(--cor-primaria-hover)]">Registrar</span>
+        </p>
+      </form>
+
+      <!-- Registro -->
+      <form id="registerForm" class="form-transition flex flex-col gap-6">
+        <h2 class="text-3xl font-extrabold text-center fade-text">Criar conta</h2>
+        <p class="text-center text-[var(--cor-texto-sec)] mb-4">Preencha os dados abaixo</p>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-user text-gray-400 text-lg"></i>
+          <input type="text" placeholder="Nome">
+        </div>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-envelope text-gray-400 text-lg"></i>
+          <input type="email" placeholder="Email">
+        </div>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock text-gray-400 text-lg"></i>
+          <input type="password" placeholder="Senha">
+        </div>
+
+        <button type="submit" class="p-4 rounded-xl font-bold text-white btn-purple">Registrar</button>
+
+        <p class="text-center text-[var(--cor-texto-sec)] mt-2">Já tem conta? 
+          <span id="showLogin" class="text-[var(--cor-primaria)] cursor-pointer font-semibold hover:text-[var(--cor-primaria-hover)]">Login</span>
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const showRegister = document.getElementById('showRegister');
+    const showLogin = document.getElementById('showLogin');
+
+    showRegister.addEventListener('click', () => {
+      loginForm.classList.remove('active');
+      registerForm.classList.add('active');
+    });
+
+    showLogin.addEventListener('click', () => {
+      registerForm.classList.remove('active');
+      loginForm.classList.add('active');
+    });
+  </script>
+
+</body>
+</html>

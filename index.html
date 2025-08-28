@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produtos - Meu Site</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --cor-fundo: #111827;         /* fundo principal */
+    --cor-fundo-sec: #1f2937;     /* fundo secundário */
+    --cor-primaria: #a855f7;      /* roxo */
+    --cor-primaria-hover: #9333ea;
+    --cor-texto: #f3f4f6;         /* texto claro */
+    --cor-texto-sec: #d1d5db;     /* cinza claro */
+    --cor-destaque: #f59e0b;      /* amarelo (detalhes) */
+    --cor-borda: #374151;
+  }
+
+  /* Utilitárias */
+  .bg-fundo { background-color: var(--cor-fundo); }
+  .bg-fundo-sec { background-color: var(--cor-fundo-sec); }
+  .bg-primaria { background-color: var(--cor-primaria); }
+  .bg-primaria-hover:hover { background-color: var(--cor-primaria-hover); }
+  
+  .text-primaria { color: var(--cor-primaria); }
+  .text-sec { color: var(--cor-texto-sec); }
+  .text-destaque { color: var(--cor-destaque); }
+
+  .border-custom { border-color: var(--cor-borda); }
+
+  /* ================== ANIMAÇÕES E EXTRAS ================== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  /* Overlay do card */
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+  }
+  .product-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  /* Tag especial animada */
+  .tag-special {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-primaria-hover));
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+  }
+
+  /* Tooltip */
+  .tooltip {
+    position: relative;
+    cursor: pointer;
+  }
+  .tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cor-primaria-hover);
+    color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    opacity: 1;
+  }
+</style>
+</head>
+<body class="bg-fundo text-white font-sans">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full bg-fundo-sec/80 backdrop-blur-md shadow-md z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <div class="flex items-center space-x-3">
+      <img src="/assets/logo.svg" alt="Logo" class="w-12 h-12 rounded-full object-cover">
+      <span class="text-2xl font-bold text-primaria">MeuSite</span>
+    </div>
+    <nav class="flex items-center space-x-6">
+      <button class="hover:text-primaria transition-colors">Usuário</button>
+      <button class="hover:text-primaria transition-colors">Carrinho</button>
+      <button class="hover:text-primaria transition-colors">Configurações</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Banner -->
+<section class="relative bg-primaria text-white py-32 text-center overflow-hidden mt-20">
+  <img src="/assets/banner.svg" alt="Banner" class="absolute inset-0 w-full h-full object-cover opacity-30">
+  <div class="relative z-10 fade-in-up">
+    <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Confira nossos Produtos</h1>
+    <p class="text-xl text-sec">As melhores promoções e ofertas de tecnologia estão aqui!</p>
+  </div>
+</section>
+
+<!-- Filtros de Categoria -->
+<section class="container mx-auto py-6 flex flex-wrap justify-center gap-4">
+  <button class="bg-primaria bg-primaria-hover px-6 py-2 rounded-full transition-all shadow-lg active:ring-2 active:ring-primaria">Notebook</button>
+  <button class="bg-primaria bg-primaria-hover px-6 py-2 rounded-full transition-all shadow-lg active:ring-2 active:ring-primaria">Periféricos</button>
+  <button class="bg-primaria bg-primaria-hover px-6 py-2 rounded-full transition-all shadow-lg active:ring-2 active:ring-primaria">Gabinetes</button>
+  <button class="bg-primaria bg-primaria-hover px-6 py-2 rounded-full transition-all shadow-lg active:ring-2 active:ring-primaria">Hardware</button>
+</section>
+
+<!-- Grid de Produtos -->
+<section class="container mx-auto py-12 flex justify-center">
+  <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+    <!-- Produtos via JS -->
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-fundo-sec text-sec py-12 mt-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+    <div>
+      <h3 class="text-primaria text-lg font-bold mb-2">MeuSite</h3>
+      <p>Produtos de qualidade, promoções exclusivas e atendimento premium.</p>
+    </div>
+    <div>
+      <h3 class="text-primaria text-lg font-bold mb-2">Links Úteis</h3>
+      <ul class="space-y-1">
+        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Produtos</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Contato</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Suporte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-primaria text-lg font-bold mb-2">Contato</h3>
+      <p>Email: suporte@meusite.com</p>
+      <p>Telefone: (11) 99999-9999</p>
+      <div class="flex space-x-4 mt-2">
+        <a href="#" class="hover:text-primaria transition-colors">🌐</a>
+        <a href="#" class="hover:text-primaria transition-colors">📘</a>
+        <a href="#" class="hover:text-primaria transition-colors">🐦</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

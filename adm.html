@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - E-commerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-black via-purple-950 to-black text-white font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-purple-900/80 backdrop-blur-md p-4 flex justify-between items-center shadow-lg border-b border-purple-700">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.svg" alt="Logo da Loja" class="h-10 w-10">
+      <h1 class="text-2xl font-bold">Painel Administrativo</h1>
+    </div>
+    <button class="bg-gradient-to-r from-purple-700 to-purple-500 px-4 py-2 rounded-xl shadow-md hover:scale-105 transition">Sair</button>
+  </header>
+
+  <!-- Main -->
+  <main class="p-10">
+    <h2 class="text-xl font-semibold mb-8">✨ Bem-vindo, Administrador</h2>
+
+    <!-- Dashboard Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card -->
+      <a href="crud_produtos.html" 
+         class="bg-purple-800/40 hover:bg-purple-700/60 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition transform hover:-translate-y-2 hover:shadow-purple-500/40">
+        <span class="text-4xl mb-3">📦</span>
+        <h3 class="text-lg font-bold">Gerenciar Produtos</h3>
+        <p class="text-sm text-gray-300 mt-2">Adicionar, editar e excluir produtos.</p>
+      </a>
+
+      <!-- Usuários -->
+      <a href="crud_usuarios.html" 
+         class="bg-purple-800/40 hover:bg-purple-700/60 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition transform hover:-translate-y-2 hover:shadow-purple-500/40">
+        <span class="text-4xl mb-3">👥</span>
+        <h3 class="text-lg font-bold">Gerenciar Usuários</h3>
+        <p class="text-sm text-gray-300 mt-2">Controle de clientes e administradores.</p>
+      </a>
+
+      <!-- Cupons -->
+      <a href="cupons.html" 
+         class="bg-purple-800/40 hover:bg-purple-700/60 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition transform hover:-translate-y-2 hover:shadow-purple-500/40">
+        <span class="text-4xl mb-3">🏷️</span>
+        <h3 class="text-lg font-bold">Cupons de Desconto</h3>
+        <p class="text-sm text-gray-300 mt-2">Criar e gerenciar promoções.</p>
+      </a>
+
+      <!-- Configurações -->
+      <a href="configuracoes.html" 
+         class="bg-purple-800/40 hover:bg-purple-700/60 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition transform hover:-translate-y-2 hover:shadow-purple-500/40">
+        <span class="text-4xl mb-3">⚙️</span>
+        <h3 class="text-lg font-bold">Configurações</h3>
+        <p class="text-sm text-gray-300 mt-2">Ajustar informações da loja.</p>
+      </a>
+
+      <!-- Pedidos -->
+      <a href="pedidos.html" 
+         class="bg-purple-800/40 hover:bg-purple-700/60 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition transform hover:-translate-y-2 hover:shadow-purple-500/40">
+        <span class="text-4xl mb-3">🛒</span>
+        <h3 class="text-lg font-bold">Pedidos</h3>
+        <p class="text-sm text-gray-300 mt-2">Acompanhar pedidos dos clientes.</p>
+      </a>
+
+      <!-- Relatórios -->
+      <a href="relatorios.html" 
+         class="bg-purple-800/40 hover:bg-purple-700/60 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition transform hover:-translate-y-2 hover:shadow-purple-500/40">
+        <span class="text-4xl mb-3">📊</span>
+        <h3 class="text-lg font-bold">Relatórios</h3>
+        <p class="text-sm text-gray-300 mt-2">Vendas, produtos mais vendidos e mais.</p>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+<footer class="bg-gray-800 text-gray-400 py-12 mt-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+    <div>
+      <h3 class="text-purple-400 text-lg font-bold mb-2">MeuSite</h3>
+      <p>Produtos de qualidade, promoções exclusivas e atendimento premium.</p>
+    </div>
+    <div>
+      <h3 class="text-purple-400 text-lg font-bold mb-2">Links Úteis</h3>
+      <ul class="space-y-1">
+        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Produtos</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Contato</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Suporte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-purple-400 text-lg font-bold mb-2">Contato</h3>
+      <p>Email: suporte@meusite.com</p>
+      <p>Telefone: (11) 99999-9999</p>
+      <div class="flex space-x-4 mt-2">
+        <a href="#" class="hover:text-purple-300 transition-colors">🌐</a>
+        <a href="#" class="hover:text-purple-300 transition-colors">📘</a>
+        <a href="#" class="hover:text-purple-300 transition-colors">🐦</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

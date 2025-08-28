@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatórios - Painel Administrativo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-black via-purple-950 to-black text-white font-sans min-h-screen">
+
+  <header class="bg-purple-900/80 backdrop-blur-md p-4 flex justify-between items-center shadow-lg border-b border-purple-700">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.svg" alt="Logo da Loja" class="h-10 w-10">
+      <h1 class="text-2xl font-bold">Relatórios</h1>
+    </div>
+    <a href="dashboard.html" class="flex items-center gap-2 bg-purple-700/70 hover:bg-purple-700/90 px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+      ⬅ Voltar ao Painel
+    </a>
+  </header>
+
+  <main class="p-10 max-w-5xl mx-auto space-y-10">
+
+    <h2 class="text-xl font-semibold">📊 Estatísticas de Vendas</h2>
+
+    <!-- Relatório de Vendas -->
+    <div class="bg-purple-900/40 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-700">
+      <h3 class="font-bold mb-4">Vendas do Mês</h3>
+      <p>Total de pedidos: <span class="text-purple-400 font-semibold">150</span></p>
+      <p>Faturamento: <span class="text-purple-400 font-semibold">R$ 45.500,00</span></p>
+    </div>
+
+    <!-- Produtos mais vendidos -->
+    <div class="bg-purple-900/40 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-700">
+      <h3 class="font-bold mb-4">Produtos Mais Vendidos</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Notebook Gamer Nitro 5 - 45 vendidos</li>
+        <li>Camiseta Street Wear - 32 vendidos</li>
+        <li>Pizza Calabresa 500g - 28 vendidos</li>
+      </ul>
+    </div>
+
+    <!-- Estatísticas adicionais -->
+    <div class="bg-purple-900/40 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-700">
+      <h3 class="font-bold mb-4">Outras Métricas</h3>
+      <p>Clientes ativos: <span class="text-purple-400 font-semibold">120</span></p>
+      <p>Cupons usados: <span class="text-purple-400 font-semibold">35</span></p>
+      <p>Pedidos pendentes: <span class="text-yellow-400 font-semibold">5</span></p>
+    </div>
+
+  </main>
+
+  <footer class="mt-16 p-6 text-center text-gray-400 text-sm border-t border-purple-800">
+    © 2025 - Painel Administrativo da Loja. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
